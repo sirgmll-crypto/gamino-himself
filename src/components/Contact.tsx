@@ -1,8 +1,11 @@
+// Replace PRIVATE_EMAIL with your personal email — it won't be visible on the page
+const PRIVATE_EMAIL = "takagamaliel@yahoo.it";
+
 const socials = [
   {
     label: "Email",
-    value: "gamaliel.bepa@accenture.com",
-    href: "mailto:gamaliel.bepa@accenture.com",
+    value: "Drop me a line →",
+    href: `mailto:${PRIVATE_EMAIL}`,
   },
   {
     label: "GitHub",
@@ -33,7 +36,7 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-14">
           {/* Form */}
           <form
-            action="mailto:gamaliel.bepa@accenture.com"
+            action={`mailto:${PRIVATE_EMAIL}`}
             method="post"
             encType="text/plain"
             className="space-y-5"
