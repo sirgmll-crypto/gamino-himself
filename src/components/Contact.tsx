@@ -1,11 +1,17 @@
 // Replace PRIVATE_EMAIL with your personal email — it won't be visible on the page
 const PRIVATE_EMAIL = "takagamaliel@yahoo.it";
+const PRIVATE_PHONE = "+393202934291";
 
 const socials = [
   {
     label: "Email",
     value: "Drop me a line →",
     href: `mailto:${PRIVATE_EMAIL}`,
+  },
+  {
+    label: "Phone",
+    value: "Give me a call →",
+    href: `tel:${PRIVATE_PHONE}`,
   },
   {
     label: "GitHub",
