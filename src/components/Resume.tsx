@@ -103,10 +103,6 @@ export default function Resume() {
                 <p className="text-[#E8553E] text-xs font-bold tracking-wide uppercase mt-1 mb-3">
                   {edu.school} · {edu.period}
                 </p>
-                <p className="text-[#8C7B6E] text-xs leading-relaxed italic mb-1">
-                  Thesis: &ldquo;{edu.thesis}&rdquo;
-                </p>
-                <p className="text-[#6B5E52] text-xs">{edu.supervisor}</p>
               </div>
             ))}
           </div>
