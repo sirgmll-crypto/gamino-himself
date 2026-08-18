@@ -1,10 +1,10 @@
 const slots = [
-  { label: "Family", h: "h-64" },
-  { label: "Together", h: "h-48" },
-  { label: "Adventure", h: "h-56" },
-  { label: "Smiles", h: "h-48" },
-  { label: "Home", h: "h-64" },
-  { label: "Love", h: "h-56" },
+  { label: "Dante", h: "h-64" },
+  { label: "Bregitte", h: "h-48" },
+  { label: "Peter", h: "h-56" },
+  { label: "Dante & Bregitte", h: "h-48" },
+  { label: "The Family", h: "h-64" },
+  { label: "Peter & Dante", h: "h-56" },
 ];
 
 export default function Family() {
