@@ -23,9 +23,12 @@ const experience = [
 
 const education = [
   {
-    degree: "Your Degree",
-    school: "Your University",
-    period: "Year — Year",
+    degree: "Bachelor in Information & Communications Engineering",
+    field: "Electronic and Telecommunication Engineering",
+    school: "Università di Trento",
+    period: "2012 – 2016",
+    thesis: "Progettazione e realizzazione di un circuito di controllo per una cella di Peltier",
+    supervisor: "Prof. Gianfranco Dalla Beta",
   },
 ];
 
@@ -94,11 +97,16 @@ export default function Resume() {
               Education
             </h3>
             {education.map((edu) => (
-              <div key={edu.degree} className="border-l-2 border-[#3D2E1C] pl-6">
-                <p className="text-[#F5EFE0] font-bold">{edu.degree}</p>
-                <p className="text-[#8C7B6E] text-sm">
+              <div key={edu.degree} className="border-l-2 border-[#E8553E] pl-6">
+                <p className="text-[#F5EFE0] font-bold text-lg leading-tight">{edu.degree}</p>
+                <p className="text-[#C4B5A0] text-sm mb-1">{edu.field}</p>
+                <p className="text-[#E8553E] text-xs font-bold tracking-wide uppercase mt-1 mb-3">
                   {edu.school} · {edu.period}
                 </p>
+                <p className="text-[#8C7B6E] text-xs leading-relaxed italic mb-1">
+                  Thesis: &ldquo;{edu.thesis}&rdquo;
+                </p>
+                <p className="text-[#6B5E52] text-xs">{edu.supervisor}</p>
               </div>
             ))}
           </div>
