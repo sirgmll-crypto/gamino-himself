@@ -1,7 +1,7 @@
 const facts = [
   { label: "Based in", value: "Italy" },
-  { label: "Role", value: "IT Professional @ Accenture" },
-  { label: "Specialty", value: "Network Monitoring & Dashboards" },
+  { label: "Roles", value: "Network Architect · Sr. Sysadmin · SW Dev" },
+  { label: "Speciality", value: "Network Monitoring & Dashboards" },
   { label: "Passion", value: "Family, Music & Building" },
   { label: "Currently", value: "Gamino Himself (this site)" },
 ];

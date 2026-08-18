@@ -6,18 +6,25 @@ const skills = [
 
 const experience = [
   {
-    role: "IT Professional",
+    role: "IT Professional · Network Architect",
     company: "Accenture",
     period: "2024 — Present",
     description:
       "Fleet-wide network observability platforms for maritime and industrial environments. Grafana dashboards, FortiManager API integration, Nautobot data enrichment, and custom Python tooling.",
   },
   {
-    role: "Network & Infrastructure Engineer",
-    company: "Previous Role",
-    period: "2020 — 2024",
+    role: "Senior System Administrator",
+    company: "[Company] — update me",
+    period: "[Year] — [Year]",
     description:
-      "Network infrastructure management, SD-WAN deployments, and IT operations for enterprise environments. Update this with your real experience.",
+      "System administration, infrastructure management, and IT operations at scale. Update this entry with your real experience and dates.",
+  },
+  {
+    role: "Software Developer",
+    company: "[Company] — update me",
+    period: "[Year] — [Year]",
+    description:
+      "Full-stack development across web and backend systems. Update this entry with your real experience and dates.",
   },
 ];
 
