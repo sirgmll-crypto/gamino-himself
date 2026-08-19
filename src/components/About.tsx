@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const facts = [
   { label: "Based in", value: "Italy" },
   { label: "Roles", value: "Network Architect · Sr. Sysadmin · SW Dev" },
@@ -49,6 +51,21 @@ export default function About() {
 
           {/* Quick facts — narrower column */}
           <div className="md:col-span-2 space-y-3">
+            {/* Avatar */}
+            <div
+              className="neo-card overflow-hidden mb-5"
+              style={{ boxShadow: "4px 4px 0px #E8553E" }}
+            >
+              <Image
+                src="/me.jpg"
+                alt="Gamaliel Bepa"
+                width={400}
+                height={260}
+                className="w-full object-cover object-top grayscale contrast-110"
+                style={{ maxHeight: "260px" }}
+              />
+            </div>
+
             {facts.map((fact) => (
               <div
                 key={fact.label}
