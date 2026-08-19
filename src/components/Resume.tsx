@@ -134,6 +134,37 @@ export default function Resume() {
             >
               ↓ Download CV
             </a>
+
+            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mt-12 mb-6">
+              Certifications
+            </h3>
+            <div className="space-y-3">
+              {certifications.map((cert) => (
+                <a
+                  key={cert.name}
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group border-2 border-[#3D2E1C] px-4 py-3 flex items-start gap-3 transition-colors hover:border-[#E8553E]"
+                >
+                  <span className="text-[#E8553E] text-lg font-black leading-none mt-0.5">
+                    ✓
+                  </span>
+                  <div className="flex-1">
+                    <p className="text-[#F5EFE0] font-bold text-sm leading-tight">
+                      {cert.name}
+                    </p>
+                    <p className="text-[#8C7B6E] text-[10px] uppercase tracking-[0.2em] mt-1">
+                      {cert.issuer} · {cert.date}
+                      {cert.note ? ` · ${cert.note}` : ""}
+                    </p>
+                  </div>
+                  <span className="text-[#3D2E1C] text-xs mt-0.5 group-hover:text-[#E8553E] transition-colors">
+                    ↗
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Right: Timeline */}
@@ -172,37 +203,6 @@ export default function Resume() {
                 </p>
               </div>
             ))}
-
-            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mt-10 mb-6">
-              Certifications
-            </h3>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {certifications.map((cert) => (
-                <a
-                  key={cert.name}
-                  href={cert.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group border-2 border-[#3D2E1C] px-4 py-3 flex items-start gap-3 transition-colors hover:border-[#E8553E]"
-                >
-                  <span className="text-[#E8553E] text-lg font-black leading-none mt-0.5">
-                    ✓
-                  </span>
-                  <div className="flex-1">
-                    <p className="text-[#F5EFE0] font-bold text-sm leading-tight">
-                      {cert.name}
-                    </p>
-                    <p className="text-[#8C7B6E] text-[10px] uppercase tracking-[0.2em] mt-1">
-                      {cert.issuer} · {cert.date}
-                      {cert.note ? ` · ${cert.note}` : ""}
-                    </p>
-                  </div>
-                  <span className="text-[#3D2E1C] text-xs mt-0.5 group-hover:text-[#E8553E] transition-colors">
-                    ↗
-                  </span>
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </div>
