@@ -1,30 +1,42 @@
 const skills = [
-  "Grafana", "Next.js", "TypeScript", "Python", "FortiGate",
-  "Nautobot", "Zabbix", "FortiManager", "Tailwind CSS", "PostgreSQL",
-  "Docker", "Git", "REST APIs", "SD-WAN", "Network Monitoring",
+  "Network Engineering", "SD-WAN", "VeloCloud", "Fortinet / FortiGate",
+  "Cloud", "IT Infrastructure", "ServiceNow", "IT Audit",
+  "Grafana", "FortiManager", "Nautobot", "Zabbix",
+  "Python", "Next.js", "TypeScript", "Network Monitoring",
 ];
 
 const experience = [
   {
-    role: "IT Professional · Network Architect",
+    role: "Adv App/Cloud Support & Engineering Specialist",
     company: "Accenture",
-    period: "2024 — Present",
+    period: "Jun 2024 — Present",
+    location: "Milan, Italy",
     description:
-      "Fleet-wide network observability platforms for maritime and industrial environments. Grafana dashboards, FortiManager API integration, Nautobot data enrichment, and custom Python tooling.",
+      "Lead the development of fleet-wide network observability platforms — Grafana dashboards, FortiManager API integration, Nautobot data enrichment, and custom Python tooling for maritime and industrial networks.",
   },
   {
-    role: "Senior System Administrator",
-    company: "[Company] — update me",
-    period: "[Year] — [Year]",
+    role: "Adv App/Cloud Support & Engineering Senior Analyst",
+    company: "Accenture",
+    period: "Dec 2021 — Jun 2024",
+    location: "Milan, Italy",
     description:
-      "System administration, infrastructure management, and IT operations at scale. Update this entry with your real experience and dates.",
+      "Data analysis and analytical engineering across cloud application support — infrastructure monitoring, incident management, and network operations.",
   },
   {
-    role: "Software Developer",
-    company: "[Company] — update me",
-    period: "[Year] — [Year]",
+    role: "Adv App/Cloud Support & Engineering Analyst",
+    company: "Accenture",
+    period: "Apr 2019 — Nov 2021",
+    location: "Milan, Italy",
     description:
-      "Full-stack development across web and backend systems. Update this entry with your real experience and dates.",
+      "LAN and SD-WAN (VeloCloud) operations, network administration, and application / cloud support.",
+  },
+  {
+    role: "IT Administrator (Sistemista)",
+    company: "Università degli Studi di Trento",
+    period: "Oct 2016 — Dec 2018",
+    location: "Trento, Italy",
+    description:
+      "Installed and configured PCs, servers, printers, IP phones, and peripherals across Windows, Mac, and Linux environments.",
   },
 ];
 
@@ -36,6 +48,13 @@ const education = [
     period: "2012 – 2016",
     thesis: "Progettazione e realizzazione di un circuito di controllo per una cella di Peltier",
     supervisor: "Prof. Gianfranco Dalla Beta",
+  },
+];
+
+const certifications = [
+  {
+    name: "NSE 4 — FortiOS Administrator",
+    issuer: "Fortinet",
   },
 ];
 
@@ -90,8 +109,11 @@ export default function Resume() {
                   <p className="text-[#F5EFE0] font-bold text-lg leading-tight">
                     {exp.role}
                   </p>
-                  <p className="text-[#E8553E] text-xs font-bold tracking-wide uppercase mt-1 mb-2">
+                  <p className="text-[#E8553E] text-xs font-bold tracking-wide uppercase mt-1">
                     {exp.company} · {exp.period}
+                  </p>
+                  <p className="text-[#8C7B6E] text-[10px] uppercase tracking-[0.2em] mb-2">
+                    {exp.location}
                   </p>
                   <p className="text-[#8C7B6E] text-sm leading-relaxed">
                     {exp.description}
@@ -112,6 +134,28 @@ export default function Resume() {
                 </p>
               </div>
             ))}
+
+            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mt-10 mb-6">
+              Certifications
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {certifications.map((cert) => (
+                <div
+                  key={cert.name}
+                  className="border-2 border-[#3D2E1C] px-4 py-3 flex items-center gap-3"
+                >
+                  <span className="text-[#E8553E] text-lg font-black leading-none">✓</span>
+                  <div>
+                    <p className="text-[#F5EFE0] font-bold text-sm leading-tight">
+                      {cert.name}
+                    </p>
+                    <p className="text-[#8C7B6E] text-[10px] uppercase tracking-[0.2em] mt-0.5">
+                      {cert.issuer}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
