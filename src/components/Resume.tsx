@@ -53,8 +53,40 @@ const education = [
 
 const certifications = [
   {
-    name: "NSE 4 — FortiOS Administrator",
+    name: "Fortinet FortiOS 7.6 Administrator",
     issuer: "Fortinet",
+    date: "Jul 2026",
+    note: "Valid to Jul 2028",
+  },
+  {
+    name: "Claude 101 — Certificate of Completion",
+    issuer: "Anthropic",
+    date: "Jun 2026",
+    note: "",
+  },
+  {
+    name: "Becoming a Cloud Architect — Fundamentals",
+    issuer: "Cloud Academy",
+    date: "Mar 2023",
+    note: "",
+  },
+  {
+    name: "CCNA: Enterprise Networking, Security & Automation",
+    issuer: "Cisco",
+    date: "Apr 2022",
+    note: "",
+  },
+  {
+    name: "CCNA: Switching, Routing & Wireless Essentials",
+    issuer: "Cisco",
+    date: "Feb 2022",
+    note: "",
+  },
+  {
+    name: "CCNA: Introduction to Networks",
+    issuer: "Cisco",
+    date: "Nov 2021",
+    note: "",
   },
 ];
 
@@ -138,19 +170,22 @@ export default function Resume() {
             <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mt-10 mb-6">
               Certifications
             </h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="grid sm:grid-cols-2 gap-3">
               {certifications.map((cert) => (
                 <div
                   key={cert.name}
-                  className="border-2 border-[#3D2E1C] px-4 py-3 flex items-center gap-3"
+                  className="border-2 border-[#3D2E1C] px-4 py-3 flex items-start gap-3"
                 >
-                  <span className="text-[#E8553E] text-lg font-black leading-none">✓</span>
+                  <span className="text-[#E8553E] text-lg font-black leading-none mt-0.5">
+                    ✓
+                  </span>
                   <div>
                     <p className="text-[#F5EFE0] font-bold text-sm leading-tight">
                       {cert.name}
                     </p>
-                    <p className="text-[#8C7B6E] text-[10px] uppercase tracking-[0.2em] mt-0.5">
-                      {cert.issuer}
+                    <p className="text-[#8C7B6E] text-[10px] uppercase tracking-[0.2em] mt-1">
+                      {cert.issuer} · {cert.date}
+                      {cert.note ? ` · ${cert.note}` : ""}
                     </p>
                   </div>
                 </div>
