@@ -3,18 +3,39 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
-      {/* Dark abstract gradient */}
+      {/* Base dark warm gradient */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at 20% 60%, #2D1F0E 0%, #0D0A06 55%, #1A0F08 100%)",
+            "radial-gradient(ellipse at 75% 45%, #2D1F0E 0%, #0D0A06 70%)",
+        }}
+      />
+
+      {/* Portrait — soft background photo, right side */}
+      <div className="absolute inset-y-0 right-0 w-full md:w-[62%]">
+        <Image
+          src="/me.jpg"
+          alt="Gamaliel Bepa — Gamino"
+          fill
+          priority
+          className="object-cover grayscale contrast-[1.1]"
+          style={{ objectPosition: "center 22%" }}
+        />
+      </div>
+
+      {/* Dark gradient scrim — keeps text readable, softly blends the photo */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to right, #0D0A06 0%, rgba(13,8,6,0.94) 38%, rgba(13,8,6,0.6) 66%, rgba(13,8,6,0.35) 100%), linear-gradient(to bottom, rgba(13,8,6,0.25) 0%, rgba(13,8,6,0.7) 100%)",
         }}
       />
 
       {/* Dot-grid texture overlay */}
       <div
-        className="absolute inset-0 opacity-[0.15]"
+        className="absolute inset-0 opacity-[0.07]"
         style={{
           backgroundImage: "radial-gradient(#F5EFE0 1px, transparent 1px)",
           backgroundSize: "28px 28px",
@@ -22,26 +43,25 @@ export default function Hero() {
       />
 
       {/* Terracotta accent bar */}
-      <div className="absolute top-0 left-0 w-1 h-full bg-[#E8553E]" />
+      <div className="absolute top-0 left-0 w-1 h-full bg-[#E8553E] z-10" />
 
-      {/* Content — two columns */}
-      <div className="relative z-10 max-w-6xl mx-auto px-8 md:px-16 py-36 grid md:grid-cols-2 gap-12 items-center">
-        {/* Left: text */}
-        <div>
+      {/* Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-8 md:px-16 py-36 w-full">
+        <div className="max-w-xl">
           <p className="text-[#E8553E] text-xs font-bold tracking-[0.4em] uppercase mb-8">
             Welcome to my space
           </p>
 
           <h1
             className="font-display font-black text-[#F5EFE0] leading-[0.9] mb-8"
-            style={{ fontSize: "clamp(4rem, 10vw, 9rem)" }}
+            style={{ fontSize: "clamp(4rem, 11vw, 10rem)", textWrap: "balance" }}
           >
             Gamino
             <br />
             <em className="text-[#E8553E] not-italic italic">Himself.</em>
           </h1>
 
-          <p className="text-[#C4B5A0] text-lg md:text-xl max-w-lg leading-relaxed mb-12 font-light">
+          <p className="text-[#D8C9B6] text-lg md:text-xl max-w-md leading-relaxed mb-12 font-light">
             IT Professional · Builder · Father.
             <br />
             My corner of the internet — biography, work, and the people I love.
@@ -63,44 +83,14 @@ export default function Hero() {
             </a>
           </div>
         </div>
-
-        {/* Right: portrait */}
-        <div className="flex justify-center md:justify-end">
-          <div
-            className="relative"
-            style={{
-              border: "3px solid #E8553E",
-              boxShadow: "8px 8px 0px #F5EFE0",
-            }}
-          >
-            <Image
-              src="/me.jpg"
-              alt="Gamaliel Bepa — Gamino"
-              width={400}
-              height={400}
-              className="object-cover grayscale contrast-110"
-              priority
-            />
-            {/* Name tag */}
-            <div
-              className="absolute bottom-0 left-0 right-0 px-4 py-3"
-              style={{ background: "rgba(14,8,4,0.75)" }}
-            >
-              <p className="text-[#F5EFE0] font-display font-black text-sm tracking-wide">
-                Gamaliel Bepa
-              </p>
-              <p className="text-[#E8553E] text-[10px] font-bold uppercase tracking-[0.2em]">
-                Gamino · Italy
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10">
-        <span className="text-[#6B5E52] text-[10px] tracking-[0.4em] uppercase">Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-[#6B5E52] to-transparent" />
+        <span className="text-[#8C7B6E] text-[10px] tracking-[0.4em] uppercase">
+          Scroll
+        </span>
+        <div className="w-px h-10 bg-gradient-to-b from-[#8C7B6E] to-transparent" />
       </div>
     </section>
   );

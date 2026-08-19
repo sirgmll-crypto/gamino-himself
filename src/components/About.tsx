@@ -51,18 +51,17 @@ export default function About() {
 
           {/* Quick facts — narrower column */}
           <div className="md:col-span-2 space-y-3">
-            {/* Avatar */}
+            {/* Avatar — perfect square, face centered */}
             <div
-              className="neo-card overflow-hidden mb-5"
+              className="neo-card overflow-hidden mb-5 aspect-square relative"
               style={{ boxShadow: "4px 4px 0px #E8553E" }}
             >
               <Image
                 src="/me.jpg"
                 alt="Gamaliel Bepa"
-                width={400}
-                height={260}
-                className="w-full object-cover object-top grayscale contrast-110"
-                style={{ maxHeight: "260px" }}
+                fill
+                className="object-cover grayscale contrast-[1.1]"
+                style={{ objectPosition: "center 20%" }}
               />
             </div>
 
