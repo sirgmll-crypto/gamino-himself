@@ -17,24 +17,24 @@ const nextDestinations = ["Kenya", "Ivory Coast", "Japan"];
 
 export default function Travels() {
   return (
-    <section id="travels" className="py-28 bg-[#F5EFE0]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="travels" className="py-28 bg-[var(--page-bg)]">
+      <div className="max-w-6xl mx-auto px-6 reveal">
         {/* Section header */}
         <div className="flex items-baseline gap-4 mb-6">
           <span className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase">
             05 —
           </span>
           <h2
-            className="font-display font-black text-[#1A1208]"
+            className="font-display font-black text-[var(--ink)]"
             style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}
           >
             Travels
           </h2>
         </div>
 
-        <p className="text-[#6B5E52] text-lg leading-relaxed mb-14 max-w-xl">
+        <p className="text-[var(--muted)] text-lg leading-relaxed mb-14 max-w-xl">
           The world is the best classroom.{" "}
-          <span className="font-display italic text-[#1A1208]">
+          <span className="font-display italic text-[var(--ink)]">
             {visited.length}+ countries · {continents.length} continents · {nextDestinations.length} more planned.
           </span>
         </p>
@@ -58,22 +58,22 @@ export default function Travels() {
           {visited.map((c) => (
             <div
               key={c.name}
-              className="neo-card bg-white px-5 py-4 flex items-center gap-3"
+              className="neo-card bg-[var(--surface)] px-5 py-4 flex items-center gap-3"
             >
               <span className="text-3xl leading-none">{c.flag}</span>
               <div>
-                <p className="text-[#1A1208] font-bold text-sm leading-tight">{c.name}</p>
-                <p className="text-[#8C7B6E] text-[10px] uppercase tracking-wide">{c.continent}</p>
+                <p className="text-[var(--ink)] font-bold text-sm leading-tight">{c.name}</p>
+                <p className="text-[var(--muted)] text-[10px] uppercase tracking-wide">{c.continent}</p>
               </div>
             </div>
           ))}
 
           {/* "And more..." filler card */}
-          <div className="neo-card bg-[#F5EFE0] border-dashed px-5 py-4 flex items-center gap-3">
+          <div className="neo-card bg-[var(--page-bg)] border-dashed px-5 py-4 flex items-center gap-3">
             <span className="text-3xl leading-none">🌍</span>
             <div>
-              <p className="text-[#6B5E52] font-bold text-sm leading-tight">& many more</p>
-              <p className="text-[#8C7B6E] text-[10px] uppercase tracking-wide">Counting...</p>
+              <p className="text-[var(--muted)] font-bold text-sm leading-tight">& many more</p>
+              <p className="text-[var(--muted)] text-[10px] uppercase tracking-wide">Counting...</p>
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ const slots = [
 export default function Family() {
   return (
     <section id="family" className="py-28 bg-[#1A1208]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6 reveal">
         {/* Section header */}
         <div className="flex items-baseline gap-4 mb-6">
           <span className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase">

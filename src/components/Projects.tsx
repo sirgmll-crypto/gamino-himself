@@ -37,14 +37,14 @@ const personalProjects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-28 bg-[#F5EFE0]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="projects" className="py-28 bg-[var(--page-bg)]">
+      <div className="max-w-6xl mx-auto px-6 reveal">
         {/* Section header */}
         <div className="flex items-baseline gap-4 mb-14">
           <span className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase">
             03 —
           </span>
-          <h2 className="font-display font-black text-[#1A1208]" style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}>
+          <h2 className="font-display font-black text-[var(--ink)]" style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}>
             Work
           </h2>
         </div>
@@ -101,20 +101,20 @@ export default function Projects() {
             <a
               key={p.title}
               href={p.href}
-              className="neo-card-hover bg-white flex flex-col p-7"
+              className="neo-card-hover bg-[var(--surface)] flex flex-col p-7"
             >
               <span className="text-[10px] font-black tracking-[0.3em] uppercase text-[#E8553E] mb-4">
                 {p.tag}
               </span>
-              <h3 className="font-display font-bold text-2xl text-[#1A1208] leading-tight mb-3">
+              <h3 className="font-display font-bold text-2xl text-[var(--ink)] leading-tight mb-3">
                 {p.title}
               </h3>
-              <p className="text-[#6B5E52] text-sm leading-relaxed flex-1 mb-6">
+              <p className="text-[var(--muted)] text-sm leading-relaxed flex-1 mb-6">
                 {p.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {p.tech.map((t) => (
-                  <span key={t} className="text-[10px] px-2.5 py-1 font-bold border-2 border-[#1A1208] text-[#1A1208]">
+                  <span key={t} className="text-[10px] px-2.5 py-1 font-bold border-2 border-[var(--line)] text-[var(--ink)]">
                     {t}
                   </span>
                 ))}

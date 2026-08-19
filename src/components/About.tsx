@@ -10,14 +10,14 @@ const facts = [
 
 export default function About() {
   return (
-    <section id="about" className="py-28 bg-[#F5EFE0]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="about" className="py-28 bg-[var(--page-bg)]">
+      <div className="max-w-6xl mx-auto px-6 reveal">
         {/* Section header */}
         <div className="flex items-baseline gap-4 mb-20">
           <span className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase">
             01 —
           </span>
-          <h2 className="font-display font-black text-[#1A1208]" style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}>
+          <h2 className="font-display font-black text-[var(--ink)]" style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}>
             The Story
           </h2>
         </div>
@@ -25,15 +25,15 @@ export default function About() {
         <div className="grid md:grid-cols-5 gap-10 items-start">
           {/* Bio — wider column */}
           <div className="md:col-span-3 space-y-5">
-            <div className="neo-card bg-white p-8">
-              <p className="text-[#1A1208] text-lg leading-relaxed mb-5">
+            <div className="neo-card bg-[var(--surface)] p-8">
+              <p className="text-[var(--ink)] text-lg leading-relaxed mb-5">
                 Hey, I&apos;m{" "}
                 <strong className="text-[#E8553E]">Gamaliel Bepa</strong> —
                 everyone calls me Gamino. I&apos;m an IT professional with a
                 deep focus on network monitoring, infrastructure visibility, and
                 building tools that make complex systems easier to understand.
               </p>
-              <p className="text-[#6B5E52] leading-relaxed">
+              <p className="text-[var(--muted)] leading-relaxed">
                 Based in Italy, I work at Accenture where I lead the development
                 of fleet-wide monitoring platforms for large-scale maritime and
                 industrial networks. I thrive at the intersection of engineering
@@ -68,12 +68,12 @@ export default function About() {
             {facts.map((fact) => (
               <div
                 key={fact.label}
-                className="neo-card bg-white flex justify-between items-center px-5 py-4"
+                className="neo-card bg-[var(--surface)] flex justify-between items-center px-5 py-4"
               >
-                <span className="text-[#6B5E52] text-xs font-bold uppercase tracking-[0.15em]">
+                <span className="text-[var(--muted)] text-xs font-bold uppercase tracking-[0.15em]">
                   {fact.label}
                 </span>
-                <span className="text-[#1A1208] font-semibold text-sm text-right">
+                <span className="text-[var(--ink)] font-semibold text-sm text-right">
                   {fact.value}
                 </span>
               </div>
