@@ -57,36 +57,42 @@ const certifications = [
     issuer: "Fortinet",
     date: "Jul 2026",
     note: "Valid to Jul 2028",
+    url: "https://www.credly.com/badges/08e0b04b-af2c-40ff-be09-550ee3f89880/public_url",
   },
   {
     name: "Claude 101 — Certificate of Completion",
     issuer: "Anthropic",
     date: "Jun 2026",
     note: "",
+    url: "https://verify.skilljar.com/c/r7mp3txt39t8",
   },
   {
     name: "Becoming a Cloud Architect — Fundamentals",
     issuer: "Cloud Academy",
     date: "Mar 2023",
     note: "",
+    url: "https://certificates.cloudacademy.com/ab105dd3a89c8926445ffeb27985da773279d83e.pdf",
   },
   {
     name: "CCNA: Enterprise Networking, Security & Automation",
     issuer: "Cisco",
     date: "Apr 2022",
     note: "",
+    url: "https://www.credly.com/badges/5ba25f83-4200-4518-8437-b2b8154dab2e/public_url",
   },
   {
     name: "CCNA: Switching, Routing & Wireless Essentials",
     issuer: "Cisco",
     date: "Feb 2022",
     note: "",
+    url: "https://www.credly.com/badges/45f999b7-56be-4ad1-8144-3a78e11bf9ed/public_url",
   },
   {
     name: "CCNA: Introduction to Networks",
     issuer: "Cisco",
     date: "Nov 2021",
     note: "",
+    url: "https://www.credly.com/badges/2309b0d9-1ae8-4a18-af59-a2a0afde28d5/public_url",
   },
 ];
 
@@ -172,14 +178,17 @@ export default function Resume() {
             </h3>
             <div className="grid sm:grid-cols-2 gap-3">
               {certifications.map((cert) => (
-                <div
+                <a
                   key={cert.name}
-                  className="border-2 border-[#3D2E1C] px-4 py-3 flex items-start gap-3"
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group border-2 border-[#3D2E1C] px-4 py-3 flex items-start gap-3 transition-colors hover:border-[#E8553E]"
                 >
                   <span className="text-[#E8553E] text-lg font-black leading-none mt-0.5">
                     ✓
                   </span>
-                  <div>
+                  <div className="flex-1">
                     <p className="text-[#F5EFE0] font-bold text-sm leading-tight">
                       {cert.name}
                     </p>
@@ -188,7 +197,10 @@ export default function Resume() {
                       {cert.note ? ` · ${cert.note}` : ""}
                     </p>
                   </div>
-                </div>
+                  <span className="text-[#3D2E1C] text-xs mt-0.5 group-hover:text-[#E8553E] transition-colors">
+                    ↗
+                  </span>
+                </a>
               ))}
             </div>
           </div>
