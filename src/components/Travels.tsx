@@ -1,15 +1,19 @@
 const visited = [
-  { flag: "🇺🇸", name: "United States", continent: "Americas" },
-  { flag: "🇨🇦", name: "Canada", continent: "Americas" },
-  { flag: "🇨🇲", name: "Cameroon", continent: "Africa" },
+  { flag: "🇮🇹", name: "Italy", continent: "Europe" },
   { flag: "🇫🇷", name: "France", continent: "Europe" },
   { flag: "🇪🇸", name: "Spain", continent: "Europe" },
   { flag: "🇩🇪", name: "Germany", continent: "Europe" },
   { flag: "🇧🇪", name: "Belgium", continent: "Europe" },
   { flag: "🇳🇱", name: "Netherlands", continent: "Europe" },
+  { flag: "🇧🇬", name: "Bulgaria", continent: "Europe" },
+  { flag: "🇺🇸", name: "United States", continent: "Americas" },
+  { flag: "🇨🇦", name: "Canada", continent: "Americas" },
+  { flag: "🇲🇽", name: "Mexico (Tijuana)", continent: "Americas" },
+  { flag: "🇨🇲", name: "Cameroon", continent: "Africa" },
 ];
 
 const continents = [...new Set(visited.map((c) => c.continent))];
+const nextDestinations = ["Kenya", "Ivory Coast", "Japan"];
 
 export default function Travels() {
   return (
@@ -31,7 +35,7 @@ export default function Travels() {
         <p className="text-[#6B5E52] text-lg leading-relaxed mb-14 max-w-xl">
           The world is the best classroom.{" "}
           <span className="font-display italic text-[#1A1208]">
-            {visited.length}+ countries · {continents.length} continents · always moving.
+            {visited.length}+ countries · {continents.length} continents · {nextDestinations.length} more planned.
           </span>
         </p>
 
@@ -74,23 +78,30 @@ export default function Travels() {
           </div>
         </div>
 
-        {/* Next destination — Japan */}
-        <div className="neo-card bg-[#E8553E] px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-8">
-          <div className="flex items-center gap-5">
-            <span className="text-5xl leading-none">🇯🇵</span>
-            <div>
-              <p className="text-[10px] font-black tracking-[0.3em] uppercase text-[#FDDDD6] mb-1">
-                Next destination
-              </p>
-              <p className="font-display font-black text-[#F5EFE0] text-3xl leading-tight">
-                Japan
-              </p>
-              <p className="text-[#FDDDD6] text-sm mt-1">Asia · The dream trip.</p>
-            </div>
-          </div>
-          <div className="neo-btn bg-[#F5EFE0] text-[#E8553E] px-6 py-2.5 font-black text-xs tracking-[0.2em] uppercase"
-            style={{ boxShadow: "3px 3px 0px #1A1208" }}>
-            Coming soon ✈
+        {/* Next destinations */}
+        <div className="mt-8 space-y-4">
+          <p className="text-[10px] font-black tracking-[0.3em] uppercase text-[#E8553E] mb-5">
+            Next destinations ✈
+          </p>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { flag: "🇰🇪", name: "Kenya", sub: "Africa · Top of the list" },
+              { flag: "🇨🇮", name: "Ivory Coast", sub: "Africa · Coming up" },
+              { flag: "🇯🇵", name: "Japan", sub: "Asia · The dream trip" },
+            ].map((dest) => (
+              <div
+                key={dest.name}
+                className="neo-card bg-[#E8553E] px-6 py-5 flex items-center gap-4"
+              >
+                <span className="text-4xl leading-none">{dest.flag}</span>
+                <div>
+                  <p className="font-display font-black text-[#F5EFE0] text-xl leading-tight">
+                    {dest.name}
+                  </p>
+                  <p className="text-[#FDDDD6] text-xs mt-0.5">{dest.sub}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
