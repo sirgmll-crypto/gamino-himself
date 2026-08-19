@@ -32,7 +32,7 @@ export default function Contact() {
         {/* Section header */}
         <div className="flex items-baseline gap-4 mb-20">
           <span className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase">
-            05 —
+            06 —
           </span>
           <h2 className="font-display font-black text-[#1A1208]" style={{ fontSize: "clamp(3rem, 7vw, 5.5rem)" }}>
             Say Hello
