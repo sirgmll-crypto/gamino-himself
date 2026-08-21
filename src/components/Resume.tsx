@@ -3,6 +3,7 @@ import PrintButton from "./PrintButton";
 // Adjust these to your real proficiency — pct drives the bar width
 const languages = [
   { name: "English", level: "Native", pct: "100%" },
+  { name: "French", level: "Native", pct: "100%" },
   { name: "Italian", level: "Fluent", pct: "85%" },
 ];
 
