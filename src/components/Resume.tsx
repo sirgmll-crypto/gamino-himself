@@ -18,6 +18,31 @@ const auditDomains = [
   "Server inventory & Risk Control Matrix (RCM) evidence",
 ];
 
+const auditSkills = [
+  "ITGC",
+  "SOX / L.262",
+  "COBIT",
+  "ITIL",
+  "Access Controls",
+  "Segregation of Duties",
+  "Privileged Access (PAM)",
+  "Identity & Access Mgmt",
+  "Change Management",
+  "Patch & Vulnerability Mgmt",
+  "Backup & Recovery",
+  "Configuration Mgmt (SCCM)",
+  "Active Directory Security",
+  "Database Security",
+  "OS Hardening",
+  "Log & Audit-Trail Review",
+  "Password Policy",
+  "Risk Control Matrix (RCM)",
+  "Controls Testing",
+  "Evidence Gathering",
+  "Remediation Tracking",
+  "Compliance Reporting",
+];
+
 const skills = [
   "Network Engineering", "SD-WAN", "VeloCloud", "Fortinet / FortiGate",
   "Cloud", "IT Infrastructure", "ServiceNow", "IT Audit",
@@ -267,6 +292,21 @@ export default function Resume() {
                 </span>
                 <span className="text-[#C4B5A0] text-sm leading-snug">{d}</span>
               </div>
+            ))}
+          </div>
+
+          {/* Audit skills & frameworks */}
+          <p className="text-[#E8553E] text-[10px] font-black tracking-[0.3em] uppercase mt-10 mb-4">
+            Audit skills &amp; frameworks
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {auditSkills.map((s) => (
+              <span
+                key={s}
+                className="border-2 border-[#3D2E1C] text-[#C4B5A0] text-xs font-semibold px-3 py-1.5 hover:bg-[#E8553E] hover:border-[#E8553E] hover:text-[#F5EFE0] transition-all cursor-default"
+              >
+                {s}
+              </span>
             ))}
           </div>
         </div>
