@@ -27,36 +27,26 @@ const skills = [
 
 const experience = [
   {
-    role: "Adv App/Cloud Support & Engineering Specialist",
-    company: "Accenture",
-    period: "Jun 2024 — Present",
+    role: "Sr. Network Specialist & IT Auditor",
+    company: "Accenture S.p.A.",
+    period: "2019 — Present",
     location: "Milan, Italy",
     description:
-      "Lead the development of fleet-wide network observability platforms — Grafana dashboards, FortiManager API integration, Nautobot data enrichment, and custom Python tooling for maritime and industrial networks.",
+      "Grew from Analyst to Senior Specialist. I design and operate SD-WAN over FortiGate across 44 vessels and 119 global sites — Cisco, Fortinet & Palo Alto, over satellite, Starlink & MPLS — and built the Grafana platform that turns Fortinet telemetry into clear dashboards.",
+    highlights: [
+      "Network engineering & SD-WAN — 44 vessels + 119 worldwide sites",
+      "Grafana monitoring platform for maritime & industrial networks",
+      "IT audit & compliance — ITGC / SOX-262 across Windows, Linux, DB & AD",
+    ],
   },
   {
-    role: "Adv App/Cloud Support & Engineering Senior Analyst",
-    company: "Accenture",
-    period: "Dec 2021 — Jun 2024",
-    location: "Milan, Italy",
-    description:
-      "Data analysis and analytical engineering across cloud application support — infrastructure monitoring, incident management, and network operations.",
-  },
-  {
-    role: "Adv App/Cloud Support & Engineering Analyst",
-    company: "Accenture",
-    period: "Apr 2019 — Nov 2021",
-    location: "Milan, Italy",
-    description:
-      "LAN and SD-WAN (VeloCloud) operations, network administration, and application / cloud support.",
-  },
-  {
-    role: "IT Administrator (Sistemista)",
+    role: "IT Administrator (Sysadmin)",
     company: "Università degli Studi di Trento",
-    period: "Oct 2016 — Dec 2018",
+    period: "2016 — 2018",
     location: "Trento, Italy",
     description:
-      "Installed and configured PCs, servers, printers, IP phones, and peripherals across Windows, Mac, and Linux environments.",
+      "Installed and configured PCs, servers, printers, IP phones, and peripherals across Windows, macOS, and Linux environments.",
+    highlights: [],
   },
 ];
 
@@ -225,6 +215,21 @@ export default function Resume() {
                   <p className="text-[#8C7B6E] text-sm leading-relaxed">
                     {exp.description}
                   </p>
+                  {exp.highlights.length > 0 && (
+                    <ul className="mt-3 space-y-1.5">
+                      {exp.highlights.map((h) => (
+                        <li
+                          key={h}
+                          className="flex items-start gap-2 text-[#C4B5A0] text-xs leading-snug"
+                        >
+                          <span className="text-[#E8553E] mt-0.5 leading-none">
+                            ▹
+                          </span>
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>
