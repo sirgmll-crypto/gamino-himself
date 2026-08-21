@@ -4,6 +4,8 @@ import {
   Geographies,
   Geography,
   Marker,
+  Sphere,
+  Graticule,
 } from "react-simple-maps";
 
 const geoUrl =
@@ -35,20 +37,46 @@ export default function WorldMap() {
   return (
     <ComposableMap
       projection="geoEqualEarth"
-      projectionConfig={{ scale: 165 }}
+      projectionConfig={{ scale: 170 }}
       style={{ width: "100%", height: "auto" }}
     >
+      <defs>
+        {/* Soft glow for markers */}
+        <filter id="dotGlow" x="-120%" y="-120%" width="340%" height="340%">
+          <feGaussianBlur stdDeviation="2.4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        {/* Ocean gradient */}
+        <radialGradient id="ocean" cx="50%" cy="42%" r="75%">
+          <stop offset="0%" stopColor="#1C130A" />
+          <stop offset="100%" stopColor="#0B0805" />
+        </radialGradient>
+      </defs>
+
+      {/* Ocean + graticule grid */}
+      <Sphere
+        id="rsm-sphere"
+        fill="url(#ocean)"
+        stroke="#3D2E1C"
+        strokeWidth={0.7}
+      />
+      <Graticule stroke="#3D2E1C" strokeWidth={0.3} strokeOpacity={0.35} />
+
+      {/* Countries — interactive */}
       <Geographies geography={geoUrl}>
         {({ geographies }: { geographies: { rsmKey: string }[] }) =>
           geographies.map((geo: { rsmKey: string }) => (
             <Geography
               key={geo.rsmKey}
               geography={geo}
-              fill="#2D1F0E"
+              fill="#241A10"
               stroke="#4A3828"
               strokeWidth={0.4}
               style={{
-                default: { outline: "none", transition: "fill 0.2s ease" },
+                default: { outline: "none", transition: "fill 0.25s ease" },
                 hover: { fill: "#E8553E", outline: "none", cursor: "pointer" },
                 pressed: { fill: "#C73F28", outline: "none" },
               }}
@@ -57,16 +85,24 @@ export default function WorldMap() {
         }
       </Geographies>
 
-      {/* Visited — solid terracotta dots */}
+      {/* Visited — glowing dot with soft halo */}
       {visited.map(({ name, coordinates }) => (
         <Marker key={name} coordinates={coordinates}>
-          <circle r={4} fill="#E8553E" stroke="#F5EFE0" strokeWidth={1} />
+          <circle r={9} fill="#E8553E" opacity={0.12} />
+          <circle
+            r={4}
+            fill="#E8553E"
+            stroke="#F5EFE0"
+            strokeWidth={1}
+            style={{ filter: "url(#dotGlow)" }}
+          />
         </Marker>
       ))}
 
-      {/* Next — pulsing hollow rings */}
+      {/* Next — pulsing halo ring */}
       {next.map(({ name, coordinates }) => (
         <Marker key={name} coordinates={coordinates}>
+          <circle r={9} fill="#F5EFE0" opacity={0.08} />
           <circle
             r={5}
             fill="none"
@@ -74,7 +110,11 @@ export default function WorldMap() {
             strokeWidth={1.5}
             className="map-pulse"
           />
-          <circle r={2} fill="#F5EFE0" />
+          <circle
+            r={2}
+            fill="#F5EFE0"
+            style={{ filter: "url(#dotGlow)" }}
+          />
         </Marker>
       ))}
     </ComposableMap>
