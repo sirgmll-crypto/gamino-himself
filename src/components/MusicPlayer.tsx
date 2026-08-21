@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 // Swap this with your own Spotify playlist ID
 // (open playlist in Spotify → Share → Copy link → the ID is after /playlist/)
-const PLAYLIST_ID = "37i9dQZF1DX8Uebhn9wzrS";
+const PLAYLIST_ID = "37i9dQZF1CKMFBxUbxRIAg";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare global {
