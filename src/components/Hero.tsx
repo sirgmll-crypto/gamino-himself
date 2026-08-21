@@ -1,4 +1,5 @@
 import Image from "next/image";
+import StatusBar from "./StatusBar";
 
 export default function Hero() {
   return (
@@ -81,6 +82,11 @@ export default function Hero() {
             >
               Say Hello
             </a>
+          </div>
+
+          {/* Live status bar */}
+          <div className="mt-10">
+            <StatusBar />
           </div>
         </div>
       </div>

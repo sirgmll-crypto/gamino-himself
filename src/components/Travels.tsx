@@ -1,4 +1,4 @@
-import Globe3D from "./Globe3D";
+import TravelMap from "./TravelMap";
 
 const visited = [
   { flag: "🇮🇹", name: "Italy", continent: "Europe" },
@@ -17,6 +17,7 @@ const visited = [
 
 const continents = [...new Set(visited.map((c) => c.continent))];
 const nextDestinations = ["Kenya", "Ivory Coast", "Japan"];
+const worldPct = Math.round((visited.length / 195) * 100); // ~% of world's countries
 
 export default function Travels() {
   return (
@@ -43,11 +44,11 @@ export default function Travels() {
         </p>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 mb-12">
+        <div className="grid grid-cols-3 gap-4 mb-10">
           {[
             { value: `${visited.length}+`, label: "Countries" },
             { value: `${continents.length}`, label: "Continents" },
-            { value: "∞", label: "More to go" },
+            { value: `${worldPct}%`, label: "World explored" },
           ].map((s) => (
             <div key={s.label} className="neo-card bg-[#1A1208] px-6 py-5 text-center">
               <p className="font-display font-black text-[#E8553E] text-3xl">{s.value}</p>
@@ -56,35 +57,35 @@ export default function Travels() {
           ))}
         </div>
 
-        {/* Interactive 3D globe */}
-        <div className="neo-card bg-[#0D0A06] p-4 md:p-8">
-          <Globe3D />
-          <div className="flex flex-wrap items-center gap-6 justify-center -mt-2">
+        {/* Static world map — visited countries highlighted */}
+        <div className="neo-card bg-[#0D0A06] p-5 md:p-10">
+          <TravelMap />
+          <div className="flex flex-wrap items-center gap-6 justify-center mt-4">
             <span className="flex items-center gap-2 text-[#8C7B6E] text-xs">
-              <span className="inline-block w-3 h-3 rounded-full bg-[#E8553E]" />
+              <span className="inline-block w-3 h-3 bg-[#E8553E]" />
               Visited
             </span>
             <span className="flex items-center gap-2 text-[#8C7B6E] text-xs">
-              <span className="inline-block w-3 h-3 rounded-full bg-[#F5EFE0]" />
-              Next destination
-            </span>
-            <span className="text-[#4A3828] text-xs italic font-display">
-              drag to spin →
+              <span className="inline-block w-3 h-3 bg-[#2D1F0E] border border-[#4A3828]" />
+              Not yet
             </span>
           </div>
         </div>
 
-        {/* Visited countries — flag row */}
-        <div className="flex flex-wrap gap-x-5 gap-y-2 mt-6 justify-center">
-          {visited.map((c) => (
-            <span
-              key={c.name}
-              className="inline-flex items-center gap-1.5 text-[var(--muted)] text-xs"
-            >
-              <span className="text-lg leading-none">{c.flag}</span>
-              {c.name}
-            </span>
-          ))}
+        {/* Scrolling place-name marquee */}
+        <div className="relative overflow-hidden border-y-2 border-[var(--line)] py-4 mt-8">
+          <div className="flex gap-8 whitespace-nowrap marquee w-max">
+            {[...visited, ...visited].map((c, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center gap-2 font-display font-bold text-lg text-[var(--ink)]"
+              >
+                <span>{c.flag}</span>
+                {c.name}
+                <span className="text-[#E8553E] ml-2">✦</span>
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Next destinations */}
