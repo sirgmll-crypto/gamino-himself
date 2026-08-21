@@ -7,6 +7,17 @@ const languages = [
   { name: "Italian", level: "Fluent", pct: "85%" },
 ];
 
+const auditDomains = [
+  "ITGC (IT General Controls) monitoring — annual & semestral cycles",
+  "SOX / L.262 compliance for financial-relevant applications",
+  "Access & user reviews — Windows, Linux, Databases & Active Directory",
+  "Privileged / superuser & broad-privilege access reviews",
+  "Password-policy compliance across AD domains (L.262 perimeter)",
+  "Patch-management audits — operating systems & databases",
+  "Backup, change-management & SCCM configuration controls",
+  "Server inventory & Risk Control Matrix (RCM) evidence",
+];
+
 const skills = [
   "Network Engineering", "SD-WAN", "VeloCloud", "Fortinet / FortiGate",
   "Cloud", "IT Infrastructure", "ServiceNow", "IT Audit",
@@ -228,6 +239,29 @@ export default function Resume() {
                 <p className="text-[#E8553E] text-xs font-bold tracking-wide uppercase mt-1 mb-3">
                   {edu.school} · {edu.period}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* IT Audit & Compliance */}
+        <div className="mt-16 pt-12 border-t-2 border-[#3D2E1C]">
+          <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-4">
+            IT Audit &amp; Compliance
+          </h3>
+          <p className="text-[#8C7B6E] text-sm leading-relaxed max-w-3xl mb-8">
+            Recurring ITGC and SOX / L.262 audits across Saipem&apos;s global IT
+            infrastructure since 2019 — providing evidence and controls testing
+            for internal, EY, and ACN (Italian National Cybersecurity Agency)
+            engagements.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
+            {auditDomains.map((d) => (
+              <div key={d} className="flex items-start gap-3">
+                <span className="text-[#E8553E] text-sm mt-0.5 leading-none">
+                  ▹
+                </span>
+                <span className="text-[#C4B5A0] text-sm leading-snug">{d}</span>
               </div>
             ))}
           </div>
