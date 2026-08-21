@@ -8,6 +8,7 @@ const visited = [
   { flag: "🇧🇪", name: "Belgium", continent: "Europe" },
   { flag: "🇳🇱", name: "Netherlands", continent: "Europe" },
   { flag: "🇧🇬", name: "Bulgaria", continent: "Europe" },
+  { flag: "🇱🇺", name: "Luxembourg", continent: "Europe" },
   { flag: "🇺🇸", name: "United States", continent: "Americas" },
   { flag: "🇨🇦", name: "Canada", continent: "Americas" },
   { flag: "🇲🇽", name: "Mexico (Tijuana)", continent: "Americas" },

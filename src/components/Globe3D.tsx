@@ -12,6 +12,7 @@ const visited = [
   { name: "Belgium", lat: 50.6, lng: 4.5 },
   { name: "Netherlands", lat: 52.1, lng: 5.3 },
   { name: "Bulgaria", lat: 42.7, lng: 25.5 },
+  { name: "Luxembourg", lat: 49.8, lng: 6.1 },
   { name: "United States", lat: 39.8, lng: -98.5 },
   { name: "Canada", lat: 56.1, lng: -106.3 },
   { name: "Mexico", lat: 23.6, lng: -102.5 },
