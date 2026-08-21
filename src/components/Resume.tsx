@@ -162,6 +162,20 @@ export default function Resume() {
               ))}
             </div>
 
+            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-6">
+              Audit Skills &amp; Frameworks
+            </h3>
+            <div className="flex flex-wrap gap-2 mb-10">
+              {auditSkills.map((s) => (
+                <span
+                  key={s}
+                  className="border-2 border-[#3D2E1C] text-[#C4B5A0] text-xs font-semibold px-3 py-1.5 hover:bg-[#E8553E] hover:border-[#E8553E] hover:text-[#F5EFE0] transition-all cursor-default"
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
+
             <PrintButton />
 
             <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mt-12 mb-6">
@@ -228,6 +242,26 @@ export default function Resume() {
               ))}
             </div>
 
+            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-4">
+              IT Audit &amp; Compliance
+            </h3>
+            <p className="text-[#8C7B6E] text-sm leading-relaxed mb-5">
+              Recurring ITGC and SOX / L.262 audits across Saipem&apos;s global
+              IT infrastructure since 2019 — providing evidence and controls
+              testing for internal and external regulatory engagements.
+            </p>
+            <ul className="space-y-2.5 mb-10">
+              {auditDomains.map((d) => (
+                <li
+                  key={d}
+                  className="flex items-start gap-2.5 text-[#C4B5A0] text-sm leading-snug"
+                >
+                  <span className="text-[#E8553E] mt-0.5 leading-none">▹</span>
+                  {d}
+                </li>
+              ))}
+            </ul>
+
             <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-6">
               Education
             </h3>
@@ -274,42 +308,6 @@ export default function Resume() {
           </div>
         </div>
 
-        {/* IT Audit & Compliance */}
-        <div className="mt-16 pt-12 border-t-2 border-[#3D2E1C]">
-          <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-4">
-            IT Audit &amp; Compliance
-          </h3>
-          <p className="text-[#8C7B6E] text-sm leading-relaxed max-w-3xl mb-8">
-            Recurring ITGC and SOX / L.262 audits across Saipem&apos;s global IT
-            infrastructure since 2019 — providing evidence and controls testing
-            for internal and external regulatory engagements.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
-            {auditDomains.map((d) => (
-              <div key={d} className="flex items-start gap-3">
-                <span className="text-[#E8553E] text-sm mt-0.5 leading-none">
-                  ▹
-                </span>
-                <span className="text-[#C4B5A0] text-sm leading-snug">{d}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Audit skills & frameworks */}
-          <p className="text-[#E8553E] text-[10px] font-black tracking-[0.3em] uppercase mt-10 mb-4">
-            Audit skills &amp; frameworks
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {auditSkills.map((s) => (
-              <span
-                key={s}
-                className="border-2 border-[#3D2E1C] text-[#C4B5A0] text-xs font-semibold px-3 py-1.5 hover:bg-[#E8553E] hover:border-[#E8553E] hover:text-[#F5EFE0] transition-all cursor-default"
-              >
-                {s}
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
