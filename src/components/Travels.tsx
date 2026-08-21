@@ -1,4 +1,4 @@
-import WorldMap from "./WorldMap";
+import Globe3D from "./Globe3D";
 
 const visited = [
   { flag: "🇮🇹", name: "Italy", continent: "Europe" },
@@ -55,9 +55,22 @@ export default function Travels() {
           ))}
         </div>
 
-        {/* Interactive world map */}
-        <div className="neo-card bg-[#1A1208] p-4 md:p-8">
-          <WorldMap />
+        {/* Interactive 3D globe */}
+        <div className="neo-card bg-[#0D0A06] p-4 md:p-8">
+          <Globe3D />
+          <div className="flex flex-wrap items-center gap-6 justify-center -mt-2">
+            <span className="flex items-center gap-2 text-[#8C7B6E] text-xs">
+              <span className="inline-block w-3 h-3 rounded-full bg-[#E8553E]" />
+              Visited
+            </span>
+            <span className="flex items-center gap-2 text-[#8C7B6E] text-xs">
+              <span className="inline-block w-3 h-3 rounded-full bg-[#F5EFE0]" />
+              Next destination
+            </span>
+            <span className="text-[#4A3828] text-xs italic font-display">
+              drag to spin →
+            </span>
+          </div>
         </div>
 
         {/* Visited countries — flag row */}
