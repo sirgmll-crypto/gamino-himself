@@ -60,6 +60,29 @@ export default function About() {
                 Off the clock? I ship websites, apps &amp; software — this one
                 included.
               </p>
+
+              {/* IT Audit coverage */}
+              <div className="mt-7">
+                <p className="text-[10px] font-black tracking-[0.3em] uppercase text-[#E8553E] mb-3">
+                  IT Audit coverage
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Windows",
+                    "Linux",
+                    "Storage",
+                    "Databases",
+                    "Active Directory",
+                  ].map((a) => (
+                    <span
+                      key={a}
+                      className="border-2 border-[var(--line)] text-[var(--ink)] text-xs font-semibold px-3 py-1.5 hover:bg-[#E8553E] hover:border-[#E8553E] hover:text-[#F5EFE0] transition-all cursor-default"
+                    >
+                      {a}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Scale stats */}
@@ -106,12 +129,12 @@ export default function About() {
             {facts.map((fact) => (
               <div
                 key={fact.label}
-                className="neo-card bg-[var(--surface)] flex justify-between items-center px-5 py-4"
+                className="neo-card bg-[var(--surface)] px-5 py-3.5"
               >
-                <span className="text-[var(--muted)] text-xs font-bold uppercase tracking-[0.15em]">
+                <span className="block text-[var(--muted)] text-[10px] font-bold uppercase tracking-[0.25em] mb-1">
                   {fact.label}
                 </span>
-                <span className="text-[var(--ink)] font-semibold text-sm text-right">
+                <span className="block text-[var(--ink)] font-semibold text-sm leading-snug">
                   {fact.value}
                 </span>
               </div>
