@@ -1,3 +1,5 @@
+import ContactForm from "./ContactForm";
+
 // Replace PRIVATE_EMAIL with your personal email — it won't be visible on the page
 const PRIVATE_EMAIL = "takagamaliel@yahoo.it";
 const PRIVATE_PHONE = "+393202934291";
@@ -21,7 +23,7 @@ const socials = [
   {
     label: "LinkedIn",
     value: "Connect with me →",
-    href: "#",
+    href: "https://www.linkedin.com/in/gamaliel-b-76981165/",
   },
 ];
 
@@ -41,58 +43,7 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-2 gap-14">
           {/* Form */}
-          <form
-            action={`mailto:${PRIVATE_EMAIL}`}
-            method="post"
-            encType="text/plain"
-            className="space-y-5"
-          >
-            <div>
-              <label className="block text-[10px] font-black tracking-[0.3em] uppercase text-[var(--muted)] mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                className="w-full neo-card bg-[var(--surface)] px-5 py-4 text-[var(--ink)] text-sm outline-none focus:border-[#E8553E]"
-                placeholder="Your name"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-[10px] font-black tracking-[0.3em] uppercase text-[var(--muted)] mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                className="w-full neo-card bg-[var(--surface)] px-5 py-4 text-[var(--ink)] text-sm outline-none focus:border-[#E8553E]"
-                placeholder="your@email.com"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-[10px] font-black tracking-[0.3em] uppercase text-[var(--muted)] mb-2">
-                Message
-              </label>
-              <textarea
-                name="message"
-                rows={5}
-                className="w-full neo-card bg-[var(--surface)] px-5 py-4 text-[var(--ink)] text-sm outline-none focus:border-[#E8553E] resize-none"
-                placeholder="What's on your mind?"
-                required
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="neo-btn w-full bg-[#E8553E] text-[#F5EFE0] py-4 font-black text-xs tracking-[0.2em] uppercase"
-            >
-              Send Message
-            </button>
-          </form>
+          <ContactForm email={PRIVATE_EMAIL} />
 
           {/* Side info */}
           <div>

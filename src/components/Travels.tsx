@@ -1,3 +1,5 @@
+import WorldMap from "./WorldMap";
+
 const visited = [
   { flag: "🇮🇹", name: "Italy", continent: "Europe" },
   { flag: "🇫🇷", name: "France", continent: "Europe" },
@@ -53,29 +55,22 @@ export default function Travels() {
           ))}
         </div>
 
-        {/* Visited grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-4">
-          {visited.map((c) => (
-            <div
-              key={c.name}
-              className="neo-card bg-[var(--surface)] px-5 py-4 flex items-center gap-3"
-            >
-              <span className="text-3xl leading-none">{c.flag}</span>
-              <div>
-                <p className="text-[var(--ink)] font-bold text-sm leading-tight">{c.name}</p>
-                <p className="text-[var(--muted)] text-[10px] uppercase tracking-wide">{c.continent}</p>
-              </div>
-            </div>
-          ))}
+        {/* Interactive world map */}
+        <div className="neo-card bg-[#1A1208] p-4 md:p-8">
+          <WorldMap />
+        </div>
 
-          {/* "And more..." filler card */}
-          <div className="neo-card bg-[var(--page-bg)] border-dashed px-5 py-4 flex items-center gap-3">
-            <span className="text-3xl leading-none">🌍</span>
-            <div>
-              <p className="text-[var(--muted)] font-bold text-sm leading-tight">& many more</p>
-              <p className="text-[var(--muted)] text-[10px] uppercase tracking-wide">Counting...</p>
-            </div>
-          </div>
+        {/* Visited countries — flag row */}
+        <div className="flex flex-wrap gap-x-5 gap-y-2 mt-6 justify-center">
+          {visited.map((c) => (
+            <span
+              key={c.name}
+              className="inline-flex items-center gap-1.5 text-[var(--muted)] text-xs"
+            >
+              <span className="text-lg leading-none">{c.flag}</span>
+              {c.name}
+            </span>
+          ))}
         </div>
 
         {/* Next destinations */}

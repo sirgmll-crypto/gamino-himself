@@ -101,3 +101,54 @@ body {
     transition: none;
   }
 }
+
+/* ---- Map marker pulse ---- */
+.map-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: mapPulse 2s ease-in-out infinite;
+}
+
+@keyframes mapPulse {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-pulse {
+    animation: none;
+  }
+}
+
+/* ---- Print / Save as PDF ---- */
+@media print {
+  * {
+    color: #111 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-color: #999 !important;
+  }
+  body {
+    background: #fff !important;
+  }
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  section {
+    padding: 1.5rem 0 !important;
+    break-inside: avoid;
+  }
+}

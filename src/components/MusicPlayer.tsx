@@ -9,7 +9,7 @@ export default function MusicPlayer() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start gap-3">
+    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start gap-3 no-print">
       {open && (
         <div
           className="overflow-hidden"

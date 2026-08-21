@@ -1,3 +1,12 @@
+import PrintButton from "./PrintButton";
+
+// Adjust these to your real proficiency — pct drives the bar width
+const languages = [
+  { name: "French", level: "Native", pct: "100%" },
+  { name: "English", level: "Professional", pct: "85%" },
+  { name: "Italian", level: "Fluent", pct: "85%" },
+];
+
 const skills = [
   "Network Engineering", "SD-WAN", "VeloCloud", "Fortinet / FortiGate",
   "Cloud", "IT Infrastructure", "ServiceNow", "IT Audit",
@@ -127,13 +136,7 @@ export default function Resume() {
               ))}
             </div>
 
-            <a
-              href="/cv.pdf"
-              className="neo-btn bg-[#E8553E] text-[#F5EFE0] px-8 py-3.5 font-bold text-xs tracking-[0.2em] uppercase"
-              style={{ boxShadow: "3px 3px 0px #F5EFE0" }}
-            >
-              ↓ Download CV
-            </a>
+            <PrintButton />
 
             <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mt-12 mb-6">
               Certifications
@@ -163,6 +166,30 @@ export default function Resume() {
                     ↗
                   </span>
                 </a>
+              ))}
+            </div>
+
+            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mt-12 mb-6">
+              Languages
+            </h3>
+            <div className="space-y-4">
+              {languages.map((lang) => (
+                <div key={lang.name}>
+                  <div className="flex justify-between items-baseline mb-1.5">
+                    <span className="text-[#F5EFE0] font-bold text-sm">
+                      {lang.name}
+                    </span>
+                    <span className="text-[#8C7B6E] text-[10px] uppercase tracking-[0.2em]">
+                      {lang.level}
+                    </span>
+                  </div>
+                  <div className="h-1.5 bg-[#3D2E1C]">
+                    <div
+                      className="h-full bg-[#E8553E]"
+                      style={{ width: lang.pct }}
+                    />
+                  </div>
+                </div>
               ))}
             </div>
           </div>
