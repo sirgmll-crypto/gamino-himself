@@ -252,8 +252,7 @@ export default function Resume() {
           <p className="text-[#8C7B6E] text-sm leading-relaxed max-w-3xl mb-8">
             Recurring ITGC and SOX / L.262 audits across Saipem&apos;s global IT
             infrastructure since 2019 — providing evidence and controls testing
-            for internal, EY, and ACN (Italian National Cybersecurity Agency)
-            engagements.
+            for internal and external regulatory engagements.
           </p>
           <div className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
             {auditDomains.map((d) => (
