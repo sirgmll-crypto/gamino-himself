@@ -7,6 +7,7 @@ import Family from "@/components/Family";
 import Travels from "@/components/Travels";
 import Contact from "@/components/Contact";
 import MusicPlayer from "@/components/MusicPlayer";
+import StatusBar from "@/components/StatusBar";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         © {new Date().getFullYear()} Gamaliel Bepa — Gamino Himself
       </footer>
       <MusicPlayer />
+      <StatusBar />
     </>
   );
 }

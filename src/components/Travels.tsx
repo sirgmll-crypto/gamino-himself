@@ -1,4 +1,4 @@
-import TravelMap from "./TravelMap";
+import WorldMap from "./WorldMap";
 
 const visited = [
   { flag: "🇮🇹", name: "Italy", continent: "Europe" },
@@ -57,17 +57,20 @@ export default function Travels() {
           ))}
         </div>
 
-        {/* Static world map — visited countries highlighted */}
-        <div className="neo-card bg-[#0D0A06] p-5 md:p-10">
-          <TravelMap />
-          <div className="flex flex-wrap items-center gap-6 justify-center mt-4">
+        {/* Interactive world map — dots on visited countries */}
+        <div className="neo-card bg-[#0D0A06] p-4 md:p-8">
+          <WorldMap />
+          <div className="flex flex-wrap items-center gap-6 justify-center mt-2">
             <span className="flex items-center gap-2 text-[#8C7B6E] text-xs">
-              <span className="inline-block w-3 h-3 bg-[#E8553E]" />
+              <span className="inline-block w-3 h-3 rounded-full bg-[#E8553E] border border-[#F5EFE0]" />
               Visited
             </span>
             <span className="flex items-center gap-2 text-[#8C7B6E] text-xs">
-              <span className="inline-block w-3 h-3 bg-[#2D1F0E] border border-[#4A3828]" />
-              Not yet
+              <span className="inline-block w-3 h-3 rounded-full border-2 border-[#F5EFE0]" />
+              Next destination
+            </span>
+            <span className="text-[#4A3828] text-xs italic font-display">
+              hover a country →
             </span>
           </div>
         </div>
