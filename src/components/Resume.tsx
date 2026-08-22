@@ -151,13 +151,18 @@ const certifications = [
   },
 ];
 
+const pill =
+  "border-2 border-[#3D2E1C] text-[#C4B5A0] text-xs font-semibold hover:bg-[#E8553E] hover:border-[#E8553E] hover:text-[#F5EFE0] transition-all cursor-default";
+const groupHeading =
+  "text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-6";
+
 export default function Resume() {
   return (
     <section id="resume" className="py-28 bg-[#1A1208] relative overflow-hidden">
       <NetworkBackground />
       <div className="max-w-6xl mx-auto px-6 reveal relative z-10">
         {/* Section header */}
-        <div className="flex items-baseline gap-4 mb-20">
+        <div className="flex items-baseline gap-4 mb-16">
           <span className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase">
             02 —
           </span>
@@ -166,56 +171,115 @@ export default function Resume() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-14">
-          {/* Left: Skills + download */}
+        {/* Work History — full width, leads the section (first on mobile too) */}
+        <h3 className={groupHeading}>Work History</h3>
+        <div className="space-y-12 mb-16">
+          {experience.map((exp) => (
+            <div key={exp.role} className="border-l-2 border-[#E8553E] pl-6">
+              <p className="text-[#F5EFE0] font-bold text-xl leading-tight">
+                {exp.role}
+              </p>
+              <p className="text-[#E8553E] text-xs font-bold tracking-wide uppercase mt-1">
+                {exp.company} · {exp.period}
+              </p>
+              <p className="text-[#8C7B6E] text-[10px] uppercase tracking-[0.2em] mb-3">
+                {exp.location}
+              </p>
+              <p className="text-[#8C7B6E] text-sm leading-relaxed max-w-3xl">
+                {exp.description}
+              </p>
+
+              {exp.highlights.length > 0 && (
+                <ul className="mt-3 space-y-1.5">
+                  {exp.highlights.map((h) => (
+                    <li
+                      key={h}
+                      className="flex items-start gap-2 text-[#C4B5A0] text-sm leading-snug"
+                    >
+                      <span className="text-[#E8553E] mt-0.5 leading-none">▹</span>
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {(exp.tools.length > 0 || exp.showAudit) && (
+                <div className="mt-6 pt-6 border-t border-[#3D2E1C] grid md:grid-cols-2 gap-8">
+                  {exp.tools.length > 0 && (
+                    <div>
+                      <p className="text-[#E8553E] text-[10px] font-black tracking-[0.25em] uppercase mb-3">
+                        Tools I Built
+                      </p>
+                      <div className="space-y-3">
+                        {exp.tools.map((t) => (
+                          <div
+                            key={t.name}
+                            className="border-l-2 border-[#E8553E] pl-4"
+                          >
+                            <p className="text-[#F5EFE0] font-bold text-sm leading-tight mb-1">
+                              {t.name}
+                            </p>
+                            <p className="text-[#8C7B6E] text-xs leading-relaxed">
+                              {t.desc}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {exp.showAudit && (
+                    <div>
+                      <p className="text-[#E8553E] text-[10px] font-black tracking-[0.25em] uppercase mb-2">
+                        IT Audit &amp; Compliance
+                      </p>
+                      <p className="text-[#8C7B6E] text-sm leading-relaxed mb-3">
+                        Recurring ITGC and SOX / L.262 audits across
+                        Saipem&apos;s global IT infrastructure — evidence and
+                        controls testing for internal and external regulatory
+                        engagements.
+                      </p>
+                      <ul className="space-y-1.5">
+                        {auditDomains.map((d) => (
+                          <li
+                            key={d}
+                            className="flex items-start gap-2 text-[#C4B5A0] text-xs leading-snug"
+                          >
+                            <span className="text-[#E8553E] mt-0.5 leading-none">
+                              ▹
+                            </span>
+                            {d}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Education + Languages */}
+        <div className="grid md:grid-cols-2 gap-14 mb-16">
           <div>
-            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-6">
-              Skills &amp; Stack
-            </h3>
-            <div className="flex flex-wrap gap-2.5 mb-10">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="border-2 border-[#3D2E1C] text-[#C4B5A0] text-xs font-semibold px-4 py-2 hover:bg-[#E8553E] hover:border-[#E8553E] hover:text-[#F5EFE0] transition-all cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
+            <h3 className={groupHeading}>Education</h3>
+            {education.map((edu) => (
+              <div key={edu.degree} className="border-l-2 border-[#E8553E] pl-6">
+                <p className="text-[#F5EFE0] font-bold text-lg leading-tight">
+                  {edu.degree}
+                </p>
+                <p className="text-[#C4B5A0] text-sm mb-1">{edu.field}</p>
+                <p className="text-[#E8553E] text-xs font-bold tracking-wide uppercase mt-1">
+                  {edu.school} · {edu.period}
+                </p>
+              </div>
+            ))}
+            <div className="mt-8">
+              <PrintButton />
             </div>
-
-            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-6">
-              Dev Tools &amp; Languages
-            </h3>
-            <div className="flex flex-wrap gap-2 mb-10">
-              {devTools.map((t) => (
-                <span
-                  key={t}
-                  className="border-2 border-[#3D2E1C] text-[#C4B5A0] text-xs font-semibold px-3 py-1.5 hover:bg-[#E8553E] hover:border-[#E8553E] hover:text-[#F5EFE0] transition-all cursor-default"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-
-            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-6">
-              Audit Skills &amp; Frameworks
-            </h3>
-            <div className="flex flex-wrap gap-2 mb-10">
-              {auditSkills.map((s) => (
-                <span
-                  key={s}
-                  className="border-2 border-[#3D2E1C] text-[#C4B5A0] text-xs font-semibold px-3 py-1.5 hover:bg-[#E8553E] hover:border-[#E8553E] hover:text-[#F5EFE0] transition-all cursor-default"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-
-            <PrintButton />
-
-            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mt-12 mb-6">
-              Languages
-            </h3>
+          </div>
+          <div>
+            <h3 className={groupHeading}>Languages</h3>
             <div className="space-y-4">
               {languages.map((lang) => (
                 <div key={lang.name}>
@@ -237,116 +301,41 @@ export default function Resume() {
               ))}
             </div>
           </div>
+        </div>
 
-          {/* Right: Timeline */}
-          <div>
-            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-6">
-              Work History
-            </h3>
-            <div className="space-y-8 mb-10">
-              {experience.map((exp) => (
-                <div key={exp.role} className="border-l-2 border-[#E8553E] pl-6">
-                  <p className="text-[#F5EFE0] font-bold text-lg leading-tight">
-                    {exp.role}
-                  </p>
-                  <p className="text-[#E8553E] text-xs font-bold tracking-wide uppercase mt-1">
-                    {exp.company} · {exp.period}
-                  </p>
-                  <p className="text-[#8C7B6E] text-[10px] uppercase tracking-[0.2em] mb-2">
-                    {exp.location}
-                  </p>
-                  <p className="text-[#8C7B6E] text-sm leading-relaxed">
-                    {exp.description}
-                  </p>
-                  {exp.highlights.length > 0 && (
-                    <ul className="mt-3 space-y-1.5">
-                      {exp.highlights.map((h) => (
-                        <li
-                          key={h}
-                          className="flex items-start gap-2 text-[#C4B5A0] text-xs leading-snug"
-                        >
-                          <span className="text-[#E8553E] mt-0.5 leading-none">
-                            ▹
-                          </span>
-                          {h}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {exp.tools.length > 0 && (
-                    <div className="mt-5 pt-4 border-t border-[#3D2E1C]">
-                      <p className="text-[#E8553E] text-[10px] font-black tracking-[0.25em] uppercase mb-3">
-                        Tools I Built
-                      </p>
-                      <div className="space-y-3">
-                        {exp.tools.map((t) => (
-                          <div
-                            key={t.name}
-                            className="border-l-2 border-[#E8553E] pl-4"
-                          >
-                            <p className="text-[#F5EFE0] font-bold text-sm leading-tight mb-1">
-                              {t.name}
-                            </p>
-                            <p className="text-[#8C7B6E] text-xs leading-relaxed">
-                              {t.desc}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {exp.showAudit && (
-                    <div className="mt-5 pt-4 border-t border-[#3D2E1C]">
-                      <p className="text-[#E8553E] text-[10px] font-black tracking-[0.25em] uppercase mb-2">
-                        IT Audit &amp; Compliance
-                      </p>
-                      <p className="text-[#8C7B6E] text-sm leading-relaxed mb-3">
-                        Recurring ITGC and SOX / L.262 audits across Saipem&apos;s
-                        global IT infrastructure — evidence and controls testing
-                        for internal and external regulatory engagements.
-                      </p>
-                      <ul className="space-y-1.5">
-                        {auditDomains.map((d) => (
-                          <li
-                            key={d}
-                            className="flex items-start gap-2 text-[#C4B5A0] text-xs leading-snug"
-                          >
-                            <span className="text-[#E8553E] mt-0.5 leading-none">
-                              ▹
-                            </span>
-                            {d}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-6">
-              Education
-            </h3>
-            {education.map((edu) => (
-              <div key={edu.degree} className="border-l-2 border-[#E8553E] pl-6">
-                <p className="text-[#F5EFE0] font-bold text-lg leading-tight">{edu.degree}</p>
-                <p className="text-[#C4B5A0] text-sm mb-1">{edu.field}</p>
-                <p className="text-[#E8553E] text-xs font-bold tracking-wide uppercase mt-1 mb-3">
-                  {edu.school} · {edu.period}
-                </p>
-              </div>
+        {/* Skills — full width */}
+        <div className="pt-12 border-t-2 border-[#3D2E1C]">
+          <h3 className={groupHeading}>Skills &amp; Stack</h3>
+          <div className="flex flex-wrap gap-2.5 mb-10">
+            {skills.map((skill) => (
+              <span key={skill} className={`${pill} px-4 py-2`}>
+                {skill}
+              </span>
             ))}
+          </div>
 
+          <h3 className={groupHeading}>Dev Tools &amp; Languages</h3>
+          <div className="flex flex-wrap gap-2 mb-10">
+            {devTools.map((t) => (
+              <span key={t} className={`${pill} px-3 py-1.5`}>
+                {t}
+              </span>
+            ))}
+          </div>
+
+          <h3 className={groupHeading}>Audit Skills &amp; Frameworks</h3>
+          <div className="flex flex-wrap gap-2">
+            {auditSkills.map((s) => (
+              <span key={s} className={`${pill} px-3 py-1.5`}>
+                {s}
+              </span>
+            ))}
           </div>
         </div>
 
         {/* Certifications — full width */}
         <div className="mt-14 pt-12 border-t-2 border-[#3D2E1C]">
-          <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-6">
-            Certifications
-          </h3>
+          <h3 className={groupHeading}>Certifications</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {certifications.map((cert) => (
               <a
@@ -375,7 +364,6 @@ export default function Resume() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
