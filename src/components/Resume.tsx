@@ -87,7 +87,7 @@ const education = [
   {
     degree: "Bachelor in Information & Communications Engineering",
     field: "Electronic and Telecommunication Engineering",
-    school: "Università di Trento",
+    school: "Università degli Studi di Trento",
     period: "2012 – 2016",
     thesis: "Progettazione e realizzazione di un circuito di controllo per una cella di Peltier",
     supervisor: "Prof. Gianfranco Dalla Beta",
