@@ -36,10 +36,13 @@ export default function Travels() {
           </h2>
         </div>
 
-        <p className="text-[var(--muted)] text-lg leading-relaxed mb-14 max-w-xl">
+        <p className="text-[var(--muted)] text-lg leading-relaxed mb-14 max-w-2xl">
           The world is the best classroom.{" "}
           <span className="font-display italic text-[var(--ink)]">
-            {visited.length}+ countries · {continents.length} continents · {nextDestinations.length} more planned.
+            {visited.length}+ countries · {continents.length} continents ·{" "}
+            <span className="whitespace-nowrap">
+              {nextDestinations.length} more planned.
+            </span>
           </span>
         </p>
 
