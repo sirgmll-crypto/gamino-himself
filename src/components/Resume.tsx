@@ -61,8 +61,8 @@ const experience = [
     highlights: [
       "Network engineering & SD-WAN — 44 vessels + 119 worldwide sites",
       "Grafana monitoring platform for maritime & industrial networks",
-      "IT audit & compliance — ITGC / SOX-262 across Windows, Linux, DB & AD",
     ],
+    showAudit: true,
   },
   {
     role: "IT Administrator (Sysadmin)",
@@ -72,6 +72,7 @@ const experience = [
     description:
       "Installed and configured PCs, servers, printers, IP phones, and peripherals across Windows, macOS, and Linux environments.",
     highlights: [],
+    showAudit: false,
   },
 ];
 
@@ -238,29 +239,35 @@ export default function Resume() {
                       ))}
                     </ul>
                   )}
+
+                  {exp.showAudit && (
+                    <div className="mt-5 pt-4 border-t border-[#3D2E1C]">
+                      <p className="text-[#E8553E] text-[10px] font-black tracking-[0.25em] uppercase mb-2">
+                        IT Audit &amp; Compliance
+                      </p>
+                      <p className="text-[#8C7B6E] text-sm leading-relaxed mb-3">
+                        Recurring ITGC and SOX / L.262 audits across Saipem&apos;s
+                        global IT infrastructure — evidence and controls testing
+                        for internal and external regulatory engagements.
+                      </p>
+                      <ul className="space-y-1.5">
+                        {auditDomains.map((d) => (
+                          <li
+                            key={d}
+                            className="flex items-start gap-2 text-[#C4B5A0] text-xs leading-snug"
+                          >
+                            <span className="text-[#E8553E] mt-0.5 leading-none">
+                              ▹
+                            </span>
+                            {d}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
-
-            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-4">
-              IT Audit &amp; Compliance
-            </h3>
-            <p className="text-[#8C7B6E] text-sm leading-relaxed mb-5">
-              Recurring ITGC and SOX / L.262 audits across Saipem&apos;s global
-              IT infrastructure since 2019 — providing evidence and controls
-              testing for internal and external regulatory engagements.
-            </p>
-            <ul className="space-y-2.5 mb-10">
-              {auditDomains.map((d) => (
-                <li
-                  key={d}
-                  className="flex items-start gap-2.5 text-[#C4B5A0] text-sm leading-snug"
-                >
-                  <span className="text-[#E8553E] mt-0.5 leading-none">▹</span>
-                  {d}
-                </li>
-              ))}
-            </ul>
 
             <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-6">
               Education
