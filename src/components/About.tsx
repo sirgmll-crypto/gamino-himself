@@ -34,11 +34,11 @@ export default function About() {
             <div className="neo-card bg-[var(--surface)] p-8">
               <p className="text-[var(--ink)] text-lg leading-relaxed mb-5">
                 Hey — I&apos;m{" "}
-                <strong className="text-[#E8553E]">Gamaliel Bepa</strong>, aka
-                Gamino. A network specialist, not just a monitoring guy: I
-                architect and run enterprise networks end-to-end — Cisco &amp;
-                Fortinet switches, FortiGate &amp; Palo Alto firewalls, CPE
-                routers — all wired together with{" "}
+                <strong className="text-[#E8553E]">Gamaliel Bepa</strong> —
+                Gamino for short. A network specialist, not just a monitoring
+                engineer: I architect and run enterprise networks end-to-end —
+                Cisco &amp; Fortinet switches, FortiGate &amp; Palo Alto
+                firewalls, CPE routers — all wired together with{" "}
                 <span className="font-semibold text-[var(--ink)]">
                   BGP, OSPF &amp; TCP/IP
                 </span>
