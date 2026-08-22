@@ -31,7 +31,7 @@ const personalProjects = [
     description:
       "This site. A personal biography built with Next.js 16, Tailwind CSS, and a Warm Neo-Brutalist design system. Deployed on Vercel.",
     tech: ["Next.js 16", "TypeScript", "Tailwind CSS", "Vercel"],
-    href: "https://gamino-himself.vercel.app",
+    href: "https://gamalielbepa.com",
   },
 ];
 

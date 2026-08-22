@@ -18,7 +18,7 @@ const fraunces = Fraunces({
   weight: ["400", "700", "900"],
 });
 
-const SITE_URL = "https://gamino-himself.vercel.app";
+const SITE_URL = "https://gamalielbepa.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
