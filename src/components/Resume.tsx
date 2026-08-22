@@ -75,6 +75,10 @@ const experience = [
         name: "FortiGate One-Touch Config Generator",
         desc: "Imports a filled template (management IP, loopback, HA details, device names) and generates a complete FortiGate CLI config — including IPSec Phase 1 & 2 VPN — in seconds. Lets L1 / junior engineers provision devices from scratch with near-zero human error. Runs locally.",
       },
+      {
+        name: "Monthly Inventory Baseline",
+        desc: "Automates the fleet's monthly network baseline — a mid-month snapshot of every active device, link, and circuit across vessels and onshore sites, reconciled against the contractual baseline. Replaces manual counting and keeps inventory reporting accurate month over month.",
+      },
     ],
     showAudit: true,
   },
