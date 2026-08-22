@@ -77,7 +77,7 @@ const experience = [
       },
       {
         name: "Monthly Inventory Baseline",
-        desc: "Automates the fleet's monthly network baseline — a mid-month snapshot of every active device, link, and circuit across vessels and onshore sites, reconciled against the contractual baseline. Replaces manual counting and keeps inventory reporting accurate month over month.",
+        desc: "Automates the fleet's monthly network baseline — a mid-month snapshot of every active device, link, and circuit across vessels and onshore sites. Converts the count into defined resource units that drive a clean, accurate monthly pay-bill for the client. Replaces manual counting and keeps billing transparent and dispute-free.",
       },
     ],
     showAudit: true,
