@@ -8,8 +8,8 @@ import {
   Graticule,
 } from "react-simple-maps";
 
-const geoUrl =
-  "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+// Self-hosted (was jsDelivr CDN) — removes the runtime third-party dependency
+const geoUrl = "/countries-110m.json";
 
 // [longitude, latitude]
 const visited: { name: string; coordinates: [number, number] }[] = [
