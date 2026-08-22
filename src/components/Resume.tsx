@@ -1,4 +1,5 @@
 import PrintButton from "./PrintButton";
+import NetworkBackground from "./NetworkBackground";
 
 // Adjust these to your real proficiency — pct drives the bar width
 const languages = [
@@ -141,8 +142,9 @@ const certifications = [
 
 export default function Resume() {
   return (
-    <section id="resume" className="py-28 bg-[#1A1208]">
-      <div className="max-w-6xl mx-auto px-6 reveal">
+    <section id="resume" className="py-28 bg-[#1A1208] relative overflow-hidden">
+      <NetworkBackground />
+      <div className="max-w-6xl mx-auto px-6 reveal relative z-10">
         {/* Section header */}
         <div className="flex items-baseline gap-4 mb-20">
           <span className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase">

@@ -122,6 +122,30 @@ body {
   }
 }
 
+/* ---- Code rain (network background) ---- */
+.code-rain {
+  animation: codeRain 38s linear infinite;
+}
+.code-rain-slow {
+  animation: codeRain 52s linear infinite;
+}
+
+@keyframes codeRain {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-66.66%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-rain,
+  .code-rain-slow {
+    animation: none;
+  }
+}
+
 /* ---- Map marker pulse ---- */
 .map-pulse {
   transform-box: fill-box;
