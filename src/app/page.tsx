@@ -23,7 +23,11 @@ export default function Home() {
         <Contact />
       </main>
       <footer className="bg-[#1A1208] text-[#6B5E52] text-center text-xs py-6 tracking-widest uppercase">
-        © {new Date().getFullYear()} Gamaliel Bepa — Gamino Himself
+        © {new Date().getFullYear()} Gamaliel Bepa — Gamino Himself. All rights reserved.
+        <br />
+        <span className="normal-case tracking-normal opacity-60">
+          Unauthorized reproduction or replication of this site&apos;s content, design, or code is prohibited.
+        </span>
       </footer>
       <MusicPlayer />
       <StatusBar />
