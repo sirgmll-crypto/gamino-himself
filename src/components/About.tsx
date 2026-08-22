@@ -48,9 +48,9 @@ export default function About() {
                 My playground is global: SD-WAN over FortiGate across{" "}
                 <span className="font-semibold text-[#E8553E]">44 vessels</span>{" "}
                 riding satellite &amp; Starlink, plus{" "}
-                <span className="font-semibold text-[#E8553E]">119 offices</span>{" "}
-                on MPLS, internet &amp; Starlink — spread across every GMT zone
-                on the planet.
+                <span className="font-semibold text-[#E8553E]">119+ offices</span>{" "}
+                on MPLS, Internet DSL, ADSL, 4G LTE &amp; Starlink — spread
+                across every GMT zone on the planet.
               </p>
               <p className="text-[var(--muted)] leading-relaxed">
                 To tame the chaos, I built a{" "}
