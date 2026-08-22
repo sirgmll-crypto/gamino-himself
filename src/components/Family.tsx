@@ -45,9 +45,8 @@ export default function Family() {
             >
               Everything I build, every mile I travel, every line of code —
               it&apos;s all for{" "}
-              <em className="not-italic text-[#E8553E]">Dante</em>,{" "}
-              <em className="not-italic text-[#E8553E]">Bregitte</em>, and{" "}
-              <em className="not-italic text-[#E8553E]">Peter</em>.
+              <em className="not-italic text-[#E8553E]">my family</em>. Every
+              single one of them.
             </p>
 
             <footer className="mt-12 flex items-center gap-4">
