@@ -70,6 +70,12 @@ const experience = [
       "Network engineering & SD-WAN — 44 vessels + 119 worldwide sites",
       "Grafana monitoring platform for maritime & industrial networks",
     ],
+    tools: [
+      {
+        name: "FortiGate One-Touch Config Generator",
+        desc: "Imports a filled template (management IP, loopback, HA details, device names) and generates a complete FortiGate CLI config — including IPSec Phase 1 & 2 VPN — in seconds. Lets L1 / junior engineers provision devices from scratch with near-zero human error. Runs locally.",
+      },
+    ],
     showAudit: true,
   },
   {
@@ -80,6 +86,7 @@ const experience = [
     description:
       "Installed and configured PCs, servers, printers, IP phones, and peripherals across Windows, macOS, and Linux environments.",
     highlights: [],
+    tools: [],
     showAudit: false,
   },
 ];
@@ -261,6 +268,29 @@ export default function Resume() {
                         </li>
                       ))}
                     </ul>
+                  )}
+
+                  {exp.tools.length > 0 && (
+                    <div className="mt-5 pt-4 border-t border-[#3D2E1C]">
+                      <p className="text-[#E8553E] text-[10px] font-black tracking-[0.25em] uppercase mb-3">
+                        Tools I Built
+                      </p>
+                      <div className="space-y-3">
+                        {exp.tools.map((t) => (
+                          <div
+                            key={t.name}
+                            className="border-l-2 border-[#E8553E] pl-4"
+                          >
+                            <p className="text-[#F5EFE0] font-bold text-sm leading-tight mb-1">
+                              {t.name}
+                            </p>
+                            <p className="text-[#8C7B6E] text-xs leading-relaxed">
+                              {t.desc}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   )}
 
                   {exp.showAudit && (
