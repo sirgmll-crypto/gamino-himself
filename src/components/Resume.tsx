@@ -45,9 +45,16 @@ const auditSkills = [
 
 const skills = [
   "Network Engineering", "SD-WAN", "VeloCloud", "Fortinet / FortiGate",
-  "Cloud", "IT Infrastructure", "ServiceNow", "IT Audit",
-  "Grafana", "FortiManager", "Nautobot", "Zabbix",
-  "Python", "Next.js", "TypeScript", "Network Monitoring",
+  "Cisco", "Palo Alto", "Cloud", "IT Infrastructure",
+  "ServiceNow", "Grafana", "FortiManager", "Nautobot",
+  "Zabbix", "Network Monitoring",
+];
+
+const devTools = [
+  "TypeScript", "JavaScript", "Python", "React", "Next.js",
+  "Node.js", "Tailwind CSS", "HTML5", "CSS3", "SQL",
+  "PostgreSQL", "Supabase", "REST APIs", "Git", "Docker",
+  "Vercel", "VS Code", "Bash",
 ];
 
 const experience = [
@@ -159,6 +166,20 @@ export default function Resume() {
                   className="border-2 border-[#3D2E1C] text-[#C4B5A0] text-xs font-semibold px-4 py-2 hover:bg-[#E8553E] hover:border-[#E8553E] hover:text-[#F5EFE0] transition-all cursor-default"
                 >
                   {skill}
+                </span>
+              ))}
+            </div>
+
+            <h3 className="text-[#E8553E] text-xs font-bold tracking-[0.3em] uppercase mb-6">
+              Dev Tools &amp; Languages
+            </h3>
+            <div className="flex flex-wrap gap-2 mb-10">
+              {devTools.map((t) => (
+                <span
+                  key={t}
+                  className="border-2 border-[#3D2E1C] text-[#C4B5A0] text-xs font-semibold px-3 py-1.5 hover:bg-[#E8553E] hover:border-[#E8553E] hover:text-[#F5EFE0] transition-all cursor-default"
+                >
+                  {t}
                 </span>
               ))}
             </div>
