@@ -108,6 +108,13 @@ const education = [
 
 const certifications = [
   {
+    name: "Reinvention with Agentic AI",
+    issuer: "Accenture",
+    date: "Sep 2026",
+    note: "",
+    url: "https://www.credly.com/badges/a84c5e2c-4f4e-47e1-95aa-83fd76bb7bb7/public_url",
+  },
+  {
     name: "Fortinet FortiOS 7.6 Administrator",
     issuer: "Fortinet",
     date: "Jul 2026",
