@@ -41,6 +41,12 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // GHSA-2xp9-vwfh-vxw4: do not send attacker-controlled AVIF through sharp/libheif.
+  // GHSA-vcvr-r3jv-pc5j: stay on Next 16.3.6+ (Node ImageResponse RCE).
+  // CVE-2026-94483 / GHSA-cjq9-62q9-8jv4: stay on Next 16.3.8+ (image-opt SSRF).
+  images: {
+    formats: ["image/webp"],
+  },
   async headers() {
     return [
       {
